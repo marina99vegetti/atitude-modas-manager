@@ -1,0 +1,6 @@
+<!doctype html><html lang="pt-br"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atitude Modas | {{ titulo }}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<aside class="sidebar"><div class="brand"><img src="{{ url_for('static', filename='logo_atitude.png') }}" alt="Logo Atitude Modas"><strong>ATITUDE MODAS</strong><small>GESTÃO DA LOJA</small></div><nav>
+<a href="/">Visão geral</a><a href="/produtos">Produtos e estoque</a><a href="/vendas">Vendas</a><a href="/clientes">Clientes</a><a href="/fornecedores">Fornecedores</a><a href="/credito">Gestão de crédito</a>
+</nav><div class="sidefoot">Gestão com organização.</div></aside><main class="main"><header><div><span class="eyebrow">ATITUDE MODAS E PRESENTES</span><h1>{{ titulo }}</h1></div><span class="live">● Sistema de demonstração</span></header>
+{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}<div class="alerts">{% for category,message in messages %}<div class="alert {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}
+{% block content %}{% endblock %}<footer>© {{ ano }} Atitude Modas e Presentes · Protótipo web</footer></main></body></html>
